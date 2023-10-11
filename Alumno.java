@@ -4,6 +4,7 @@ public class Alumno {
     private String nombre;
     private String matricula;
     private int[] calificaciones;
+    private float promedio;
 
     public Alumno(String nombre, String matricula, int[] calificaciones){
         this.nombre = nombre;
@@ -41,5 +42,14 @@ public class Alumno {
         for(int i = 0; i < calificaciones.length; i++){
             System.out.println("Calificacion " + (i+1) + ": " + calificaciones[i]);
         }
+    }
+
+    public float getPromedio(){
+        int suma = 0;
+        for(int i = 0; i < calificaciones.length; i++){
+            suma += calificaciones[i];
+        }
+        this.promedio = suma/calificaciones.length;
+        return suma/calificaciones.length;
     }
 }
