@@ -41,11 +41,12 @@ public class Alumno {
         + "Matricula: " + matricula);
         for(int i = 0; i < calificaciones.length; i++){
             System.out.println("Calificacion " + (i+1) + ": " + calificaciones[i]);
+            System.out.println("Promedio: " + promedio);
         }
     }
 
     public float getPromedio(){
-        int suma = 0;
+        float suma = 0;
         for(int i = 0; i < calificaciones.length; i++){
             suma += calificaciones[i];
         }

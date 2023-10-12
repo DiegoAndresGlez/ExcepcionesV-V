@@ -1,10 +1,6 @@
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 class Main{
     public static void main(String[] args){
@@ -13,11 +9,7 @@ class Main{
         int[] calificaciones_nora = new int[7];
         int[] calificaciones_mariano = new int[7];                
         
-        try{
-            calificaciones = getCalificaciones();
-        }catch(Exception e){
-            e.printStackTrace();
-        }
+        calificaciones = getCalificaciones();
 
         for(int i = 0; i < 7; i++){
             calificaciones_diego[i] = calificaciones[i];
@@ -30,9 +22,10 @@ class Main{
         alumnos.add(new Alumno("Nora", "1287744", calificaciones_nora));
         alumnos.add(new Alumno("Mariano", "1287845", calificaciones_mariano));
         
-        System.out.println(alumnos.get(0).getPromedio());
-        System.out.println(alumnos.get(1).getPromedio());
-        System.out.println(alumnos.get(2).getPromedio()); 
+        for(Alumno alumno : alumnos){
+            alumno.getPromedio();
+            alumno.printInfo();
+        }
     }
 
     public static int[] getCalificaciones(){
