@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class Alumno {
     private String nombre;
     private String matricula;
